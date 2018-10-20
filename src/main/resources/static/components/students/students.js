@@ -17,12 +17,11 @@ function init(template) {
                     }).done(function (result) {
                         $('tr[data-id="' + id + '"]').remove();
                     }).fail(function (XHR) {
-                        console.log(XHR);
+                        console.log("Ошибка при удалении студента");
+                        console.error(XHR);
                     });
                 }
             });
-
-
 			$('#addStudentForm').submit(function (event) {
             	event.preventDefault();
               	var student = {
@@ -40,14 +39,13 @@ function init(template) {
             	}).done(function() {
                     init(template);
             	}).fail(function(XHR) {
+            	    console.log("Ошибка при создании студента");
             	    console.error(XHR);
             	});
             });
-
-
         });
     }).fail(function(XHR) {
         console.log("We are in 1 error");
-        console.log(XHR);
+        console.error(XHR);
     });
 }

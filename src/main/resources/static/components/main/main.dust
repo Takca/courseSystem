@@ -1,4 +1,37 @@
-<p>Количество текущих курсов: {numCurCourses}</p>
-<p>Количество прошедших курсов: {numPastCourses}</p>
-<p>Количество предстоящих курсов: {numUpcomingCourses}</p>
-<p>Количество студентов: {numStudents}</p>
+<div>
+   <h1>Добро пожаловать!</h1>
+   <hr/>
+   <p>Мы рады видеть вас на лучшем онлайн-журнале в интернете.</p>
+</div>
+<div>
+   <h1>Немного статистики</h1>
+   <hr>
+   <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+      <div class="carousel-inner">
+         <div class="carousel-inner carousel-item active" style="background-color: #4C2D60;">
+            <p class="d-block w-100 carousel-title">Текущих курсов:</p>
+            <p class="d-block w-100 carousel-number">{numCurCourses}</p>
+         </div>
+         <div class="carousel-inner carousel-item" style="background-color: #703158;">
+            <p class="d-block w-100 carousel-title">Прошедших курсов:</p>
+            <p class="d-block w-100 carousel-number">{numPastCourses}</p>
+         </div>
+         <div class="carousel-inner carousel-item" style="background-color: #6F863B;">
+            <p class="d-block w-100 carousel-title">Предстоящих курсов:</p>
+            <p class="d-block w-100 carousel-number">{numUpcomingCourses}</p>
+         </div>
+         <div class="carousel-inner carousel-item" style="background-color: #8F8E3F;">
+            <p class="d-block w-100 carousel-title">Зарегистрированных студентов:</p>
+            <p class="d-block w-100 carousel-number">{numStudents}</p>
+         </div>
+      </div>
+      <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+      </a>
+   </div>
+</div>

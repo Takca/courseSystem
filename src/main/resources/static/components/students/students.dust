@@ -1,39 +1,41 @@
-<table class="table table-hover table-students">
-    <thead>
-        <tr scope="row">
+<div>
+   <h1>Список студентов</h1>
+   <table class="table table-hover table-students">
+      <thead>
+         <tr scope="row">
             <th scope="cell">Id</th>
             <th scope="cell">ФИО студента</th>
             <th scope="cell">Список курсов</th>
             <th scope="cell"></th>
-        </tr>
-    </thead>
-    <tfoot></tfoot>
-    <tbody>
-        {#.}
-        <tr data-id="{id}" scope="row">
-            <td scope="cell">{id}</td>
-            <td scope="cell"><a href="#student/{id}">{name}</a></td>
-            <td scope="cell">{#courses}{name}{@sep}, {/sep}{/courses}</td>
-            <td scope="cell" align="right"><button data-id="{id}" class="btn btn-danger">Удалить</button></td>
-        </tr>
-        {/.}
-    </tbody>
-</table>
-
-<form id="addStudentForm">
-    <h1>Создать студента</h1>
-    <hr/>
-    <div class="form-group">
-        <label for="inputName">ФИО</label>
-        <input type="text" class="form-control" id="inputName" placeholder="ФИО" required>
-    </div>
-    <div class="form-group">
-        <label for="inputEmail">Email</label>
-        <input type="email" class="form-control" id="inputEmail" placeholder="Email" required>
-    </div>
-    <div class="form-group">
-        <label for="inputPhone">Телефон</label>
-        <input type="text" class="form-control" id="inputPhone" placeholder="Телефон" required>
-    </div>
-    <button type="submit" class="btn btn-success">Создать</button>
-</form>
+         </tr>
+      </thead>
+      <tfoot></tfoot>
+      <tbody>
+         {#.}
+         <tr data-id="{id}" scope="row">
+            <td scope="cell" id="tdWithId">{id}</td>
+            <td scope="cell" id="tdWithName"><a href="#student/{id}">{name}</a></td>
+            <td scope="cell" id="tdWithCourses">{#courses}{name}{@sep}, {/sep}{/courses}</td>
+            <td scope="cell" id="tdWithButton"align="right"><button data-id="{id}" class="btn btn-danger">Удалить</button></td>
+         </tr>
+         {/.}
+      </tbody>
+   </table>
+   <form id="addStudentForm">
+      <h2>Создать студента</h2>
+      <hr/>
+      <div class="form-group">
+         <label for="inputName">ФИО</label>
+         <input type="text" class="form-control" id="inputName" placeholder="ФИО" required>
+      </div>
+      <div class="form-group">
+         <label for="inputEmail">Email</label>
+         <input type="email" class="form-control" id="inputEmail" placeholder="Email" required>
+      </div>
+      <div class="form-group">
+         <label for="inputPhone">Телефон</label>
+         <input type="text" class="form-control" id="inputPhone" placeholder="Телефон" required>
+      </div>
+      <button type="submit" class="btn btn-success">Создать</button>
+   </form>
+</div>

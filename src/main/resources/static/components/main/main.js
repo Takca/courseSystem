@@ -7,7 +7,7 @@ function init(template) {
             $("#content").empty().append(out);
         });
     }).fail(function(XHR) {
-        console.log("We are in 1 error");
-        console.log(XHR);
+        console.log("Ошибка при загрузке главной страницы");
+        console.error(XHR);
     });
 }
