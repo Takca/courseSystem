@@ -25,15 +25,15 @@
     <hr/>
     <div class="form-group">
         <label for="inputName">ФИО</label>
-        <input type="text" class="form-control" id="inputName" placeholder="ФИО">
+        <input type="text" class="form-control" id="inputName" placeholder="ФИО" required>
     </div>
     <div class="form-group">
         <label for="inputEmail">Email</label>
-        <input type="text" class="form-control" id="inputEmail" placeholder="Email">
+        <input type="email" class="form-control" id="inputEmail" placeholder="Email" required>
     </div>
     <div class="form-group">
         <label for="inputPhone">Телефон</label>
-        <input type="text" class="form-control" id="inputPhone" placeholder="Телефон">
+        <input type="text" class="form-control" id="inputPhone" placeholder="Телефон" required>
     </div>
     <button type="submit" class="btn btn-success">Создать</button>
 </form>
