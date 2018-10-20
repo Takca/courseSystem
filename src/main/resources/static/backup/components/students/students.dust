@@ -1,0 +1,41 @@
+<div class="main">
+<table class="table table-hover">
+    <thead>
+        <tr scope="row">
+            <th scope="cell">Id</th>
+            <th scope="cell">ФИО студента</th>
+            <th scope="cell">Список курсов</th>
+            <th scope="cell"></th>
+        </tr>
+    </thead>
+    <tfoot></tfoot>
+    <tbody>
+        {#.}
+        <tr data-id="{id}" scope="row">
+            <th scope="cell">{id}</th>
+            <th scope="cell"><a href="#student/{id}">{name}</a></th>
+            <th scope="cell">{#courses}{name}{@sep}, {/sep}{/courses}</th>
+            <th scope="cell"><button data-id="{id}" class="btn btn-danger">Удалить</button></th>
+        </tr>
+        {/.}
+    </tbody>
+</table>
+
+<div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1">
+
+    <div class="input-group">
+        <input name="name" type="text" class="form-control" value="ФИО" required>
+    </div>
+    <br/>
+    <div class="input-group">
+        <input name="email" type="email" class="form-control" value="Email" required>
+    </div>
+    <br/>
+    <div class="input-group">
+        <input name="phone" type="text" class="form-control" value="Телефон" required>
+    </div>
+    <br/>
+    <button class="btn btn-success" type="submit">Создать</button>
+
+</div>
+</div>

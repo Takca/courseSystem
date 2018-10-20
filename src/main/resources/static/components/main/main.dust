@@ -1,0 +1,4 @@
+<p>Количество текущих курсов: {numCurCourses}</p>
+<p>Количество прошедших курсов: {numPastCourses}</p>
+<p>Количество предстоящих курсов: {numUpcomingCourses}</p>
+<p>Количество студентов: {numStudents}</p>

@@ -1,0 +1,49 @@
+<table class="table table-hover table-courses">
+    <thead>
+        <tr scope="row">
+            <th scope="cell">Id</th>
+            <th scope="cell">Название курса</th>
+            <th scope="cell">Дата начала</th>
+            <th scope="cell">Дата окончания</th>
+            <th scope="cell">Продолжительность</th>
+            <th scope="cell">Студентов</th>
+            <th scope="cell"></th>
+        </tr>
+    </thead>
+    <tfoot></tfoot>
+    <tbody>
+        {#.}
+        <tr data-id="{id}" scope="row">
+            <td scope="cell">{id}</td>
+            <td scope="cell"><a href="#course/{id}">{name}</a></td>
+            <td scope="cell">{dateStart}</td>
+            <td scope="cell">{dateEnd}</td>
+            <td scope="cell">{numOfDays}</td>
+            <td scope="cell">{students.length}</td>
+            <td scope="cell" align="right"><button data-id="{id}" class="btn btn-danger">Удалить</button></td>
+        </tr>
+        {/.}
+    </tbody>
+</table>
+
+<form id="addCourseForm">
+    <h1>Создать курс</h1>
+    <hr/>
+    <div class="form-group">
+        <label for="inputName">Название курса</label>
+        <input type="text" class="form-control" id="inputName" placeholder="Введите название курса" required>
+    </div>
+    <div class="form-group">
+        <label for="inputDateStart">Дата начала</label>
+        <input type="date" class="form-control" id="inputDateStart" placeholder="Формат даты: гггг-мм-дд" required>
+    </div>
+    <div class="form-group">
+        <label for="inputDateEnd">Дата окончания</label>
+        <input type="date" class="form-control" id="inputDateEnd" placeholder="Формат даты: гггг-мм-дд" required>
+    </div>
+    <div class="form-group">
+        <label for="inputNumOfDays">Продолжительность</label>
+        <input type="text" class="form-control" id="inputNumOfDays" placeholder="Введите количество дней" required>
+    </div>
+    <button type="submit" class="btn btn-success">Создать</button>
+</form>

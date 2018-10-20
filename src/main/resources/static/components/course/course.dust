@@ -1,0 +1,49 @@
+<br/>
+<div>
+   <div>
+      <h1 id="courseName">{name}</h1>
+   </div>
+   <hr/>
+   <div>
+      <table id="{id}" class="table table-hover table-students">
+         <thead>
+            <tr scope="row">
+               <th scope="col">ФИО Студента</th>
+               {#days}
+               <th id="{.}" scope="col">{.}</th>
+               {/days}
+            </tr>
+         </thead>
+         <tbody>
+            {#marks}
+            <tr scope="row">
+               <td>{studentName}</td>
+               {#values}
+               <td>
+                  <select id="" class="student-mark">
+                  <option id="studentId" value="0" disabled {@eq key=. value=0 type="number"}selected{/eq}></option>
+                  <option id="studentId" value="1" {@eq key=. value=1 type="number"}selected{/eq}>Н</option>
+                  <option id="studentId" value="2" {@eq key=. value=2 type="number"}selected{/eq}>2</option>
+                  <option id="studentId" value="3" {@eq key=. value=3 type="number"}selected{/eq}>3</option>
+                  <option id="studentId" value="4" {@eq key=. value=4 type="number"}selected{/eq}>4</option>
+                  <option id="studentId" value="5" {@eq key=. value=5 type="number"}selected{/eq}>5</option>
+                  </select>
+               </td>
+               {/values}
+            </tr>
+            {/marks}
+         </tbody>
+      </table>
+   </div>
+   <button type="submit" class="btn btn-success">Сохранить</button>
+</div>
+<br/>
+<div>
+   <div>
+      <h2>Записать студента на курс</h2>
+      <hr/>
+      {#freeStudents}
+      <button type="submit" id="{id}" class="btn btn-primary">{name}</button>
+      {/freeStudents}
+   </div>
+</div>

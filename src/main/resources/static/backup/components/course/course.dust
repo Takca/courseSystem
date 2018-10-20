@@ -1,0 +1,11 @@
+<div class="main">
+<div class="table-responsive">
+
+<div> {id} </div>
+<div> {name} </div>
+<div> {dateStart} </div>
+<div> {dateEnd} </div>
+<div> {numOfDays} </div>
+
+</div>
+</div>

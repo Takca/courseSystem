@@ -1,0 +1,18 @@
+<form id="updateStudentForm">
+    <h1>Изменить данные</h1>
+    <hr/>
+
+<div class="input-group">
+    <input name="name" type="text" class="form-control" value="{name}" required autofocus>
+</div>
+<br/>
+<div class="input-group">
+    <input name="email" type="email" class="form-control" value="{email}" required>
+</div>
+<br/>
+<div class="input-group">
+    <input name="phone" type="text" class="form-control" value="{phone}" required>
+</div>
+<br/>
+<button type="submit" class="btn btn-success">Сохранить</button>
+</form>
