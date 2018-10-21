@@ -46,7 +46,7 @@ function deleteModal(template, id) {
 	$("#myModal").find(".modal-title").text("Удаление студента");
 	var listOfCourses = $('tr[data-id="' + id + '"]').contents()[2].textContent;
 	var message = "";
-	if (!listOfCourses == "") {
+	if (listOfCourses != "") {
 		message += "Данный студент записан на: " + listOfCourses;
 	} else {
 		message += "Данный студент не записан на курсы";
