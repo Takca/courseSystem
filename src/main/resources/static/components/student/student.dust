@@ -8,7 +8,7 @@
       </div>
       <div class="form-group">
          <label for="inputEmail">Email</label>
-         <input id="inputEmail" type="email" class="form-control" value="{email}" pattern="^[[:word:]]+$@^[[:word:]]+$.^[[:word:]]+$" required>
+         <input id="inputEmail" type="email" class="form-control" value="{email}" required>
       </div>
       <div class="form-group">
          <label for="inputPhone">Телефон</label>

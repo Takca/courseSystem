@@ -41,14 +41,31 @@
         <h2>Записать студента на курс</h2>
         <hr/>
         <div class="input-group">
-            <select class="custom-select free-students"
-                    style="border-top-right-radius: .25rem; border-bottom-right-radius: .25rem;">
+            <select class="custom-select free-students">
                 <option disabled selected>Выберите студента</option>
                 {#freeStudents}
                 <option value="{id}">{name}</option>
                 {/freeStudents}
             </select>
-            <button type="submit" class="btn btn-primary" style="margin-left: 10px;">Записать</button>
+            <button type="submit" class="btn btn-warning">Записать</button>
+        </div>
+    </div>
+</div>
+<div class="modal" id="myModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Запись студента</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>Студент успешно записан на курс!</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-dismiss="modal">ОК</button>
+            </div>
         </div>
     </div>
 </div>

@@ -9,15 +9,7 @@ function init(template) {
 			$buttons.unbind("click.deleteClick");
 			$buttons.on("click.deleteClick", function () {
 				var id = $(this).attr("data-id");
-				$.ajax({
-					url: "api/courses/" + id,
-					type: "DELETE"
-				}).done(function () {
-					$('tr[data-id="' + id + '"]').remove();
-				}).fail(function (XHR) {
-					console.log("Ошибка при удалении курса");
-					console.error(XHR);
-				});
+				deleteModal(template, id)
 			});
 
 			$('#addCourseForm').submit(function (event) {
@@ -36,14 +28,14 @@ function init(template) {
 					data: JSON.stringify(course),
 					contentType: "application/json",
 				}).done(function () {
-					init(template);
+					$("#myModal").modal();
 				}).fail(function (XHR) {
 					console.log("Ошибка при создании курса");
 					console.error(XHR);
 				});
 			});
 
-			$('#addModal').on('hidden.bs.modal', function(event) {
+			$('#myModal').on('hidden.bs.modal', function(event) {
                 init(template);
             });
 		});
@@ -51,4 +43,33 @@ function init(template) {
 		console.log("Ошибка загрузки курсов");
 		console.error(XHR);
 	});
+}
+
+function deleteModal(template, id) {
+	$("#myModal").find(".modal-title").text("Удаление курса");
+	var listOfCourses = $('tr[data-id="' + id + '"]').contents()[5].textContent;
+	var message = "";
+	if (!listOfCourses == "") {
+		message += "На данный курс записано: " + listOfCourses + " студент(ов)";
+	} else {
+		message += "На данный курс никто не записан";
+	}
+	message += ". Выполнить удаление?";
+	$("#myModal").find("p").text(message);
+	var html = "<button id=\"acceptDelete\" type=\"button\" class=\"btn btn-danger\" data-dismiss=\"modal\">Да</button><button type=\"button\" class=\"btn btn-primary\" data-dismiss=\"modal\">Отмена</button>";
+	$("#myModal").find(".modal-footer")[0].innerHTML = html;
+	var $acceptButton = $("#acceptDelete");
+	$acceptButton.unbind("click.deleteClick");
+	$acceptButton.on("click.deleteClick", function () {
+		$.ajax({
+			url: "api/courses/" + id,
+			type: "DELETE"
+		}).done(function (result) {
+			init(template);
+		}).fail(function (XHR) {
+			console.log("Ошибка при удалении куоса");
+			console.error(XHR);
+		});
+	});
+	$("#myModal").modal();
 }

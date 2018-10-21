@@ -108,3 +108,7 @@ body {
     border-bottom-right-radius: .25rem;
     margin-right: 10px;
 }
+
+.carousel-inner {
+    border-radius: .25rem;
+}

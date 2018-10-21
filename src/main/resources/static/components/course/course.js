@@ -36,28 +36,39 @@ function init(template) {
 					type: "PUT",
 					data: JSON.stringify(data),
 					contentType: "application/json"
-				}).done(function () {}).fail(function (XHR) {
+				}).done(function () {
+				    saveModal();
+				}).fail(function (XHR) {
 					console.log("Ошибка при сохранении оценок");
 					console.error(XHR);
 				});
 			});
 			// Запись студента на курс
-			var $buttons = $(".btn-primary");
+			var $buttons = $(".btn-warning");
 			$buttons.unbind("click.addClick");
 			$buttons.on("click.addClick", function () {
 				$.ajax({
 					url: "api/courses/" + component.id + "/students/" + $(".free-students option:selected").val(),
 					type: "PUT"
 				}).done(function () {
-					init(template);
+					$("#myModal").modal();
 				}).fail(function (XHR) {
 					console.log("Ошибка записи студента на курс");
 					console.error(XHR);
 				});
 			});
+			$('#myModal').on('hidden.bs.modal', function(event) {
+                init(template);
+            });
 		});
 	}).fail(function (XHR) {
 		console.log("Ошибка загрузки курса");
 		console.error(XHR);
 	});
+}
+
+function saveModal() {
+	$("#myModal").find(".modal-title").text("Сохранение оценок");
+	$("#myModal").find("p").text("Оценки успешно сохранены!");
+	$("#myModal").modal();
 }
