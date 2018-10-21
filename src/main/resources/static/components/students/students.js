@@ -17,11 +17,7 @@ function init(template) {
 					message += "Данный студент не записан на курсы";
 				}
 				message += ".<br/> Выполнить удаление?";
-				var text = $("#deleteModal")[0].innerHTML;
-				var startText = text.substring(0, text.indexOf("<p>"))
-				var endText = text.substring(text.indexOf("</p>"), text.length)
-				var newText = startText + message + endText;
-				$("#deleteModal")[0].innerHTML = newText;
+				$("#deleteModal").find("p").text(message);
 				$("#deleteModal").modal();
 				var $acceptButton = $("#acceptDelete");
 				$acceptButton.unbind("click.deleteClick");
