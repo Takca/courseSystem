@@ -43,6 +43,9 @@ function init(template) {
 				});
 			});
 
+			$('#addModal').on('hidden.bs.modal', function(event) {
+                init(template);
+            });
 		});
 	}).fail(function (XHR) {
 		console.log("Ошибка загрузки курсов");

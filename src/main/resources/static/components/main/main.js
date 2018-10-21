@@ -3,6 +3,7 @@ function init(template) {
         url: "api/metrics/",
         type: "GET"
     }).done(function(data){
+        window.location.href = '#main';
         dust.renderSource(template, data, function (err, out) {
             $("#content").empty().append(out);
         });

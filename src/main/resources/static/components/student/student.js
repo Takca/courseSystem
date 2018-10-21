@@ -8,15 +8,16 @@ function init(template) {
             $("#content").empty().append(out);
             $('#updateStudentForm').submit(function(event) {
                 event.preventDefault();
-                data.name = $('input[name="name"]').val();
-                data.email = $('input[name="email"]').val();
-                data.phone = $('input[name="phone"]').val();
+                data.name = $('input[id="inputName"]').val();
+                data.email = $('input[id="inputEmail"]').val();
+                data.phone = $('input[id="inputPhone"]').val();
                 $.ajax({
                     url: "api/students/" + component.id,
                     type: "PUT",
                     data: JSON.stringify(data),
                     contentType: "application/json"
                 }).done(function() {
+                    $("#editModal").modal();
                 }).fail(function(XHR) {
                     console.log("Ошибка при обновлении студента");
                     console.error(XHR);

@@ -30,12 +30,49 @@
       </div>
       <div class="form-group">
          <label for="inputEmail">Email</label>
-         <input type="email" class="form-control" id="inputEmail" placeholder="Email" required>
+         <input type="email" class="form-control" id="inputEmail" placeholder="Email" pattern="^[[:word:]]+$@^[[:word:]]+$.^[[:word:]]+$" required>
       </div>
       <div class="form-group">
          <label for="inputPhone">Телефон</label>
-         <input type="text" class="form-control" id="inputPhone" placeholder="Телефон" required>
+         <input type="text" class="form-control" id="inputPhone" placeholder="Телефон" pattern="\d{11}" required>
       </div>
       <button type="submit" class="btn btn-success">Создать</button>
    </form>
+</div>
+<div class="modal" id="addModal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Создание студента</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>Студент успешно создан!</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">ОК</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal" id="deleteModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Удаление студента</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p></p>
+            </div>
+            <div class="modal-footer">
+                <button id="acceptDelete" type="button" class="btn btn-danger" data-dismiss="modal">Да</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal">Отмена</button>
+            </div>
+        </div>
+    </div>
 </div>

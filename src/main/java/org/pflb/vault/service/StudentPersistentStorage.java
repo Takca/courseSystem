@@ -14,11 +14,11 @@ public class StudentPersistentStorage {
     StudentRepository studentRepository;
 
     public Student saveStudent(Student student) {
-         return studentRepository.save(student);
+        return studentRepository.save(student);
     }
 
     public List<Student> getAll() {
-       return studentRepository.findAll();
+        return studentRepository.findAll();
     }
 
     public Student getStudentById(Long id) {

@@ -23,10 +23,14 @@ public class CoursePersistentStorage {
         return courseRepository.getOne(id);
     }
 
-    public List<Course> getAll() { return courseRepository.findAll(); }
+    public List<Course> getAll() {
+        return courseRepository.findAll();
+    }
 
     @Transactional
-    public void deleteCourseById(Long id) { courseRepository.deleteById(id);}
+    public void deleteCourseById(Long id) {
+        courseRepository.deleteById(id);
+    }
 
     public Long countPastCourses(Date date) {
         return courseRepository.countAllByDateEndLessThan(date);

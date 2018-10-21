@@ -3,17 +3,35 @@
       <h2>Изменить данные</h2>
       <hr/>
       <div class="form-group">
-         <label for="name">ФИО</label>
-         <input name="name" type="text" class="form-control" value="{name}" required autofocus>
+         <label for="inputName">ФИО</label>
+         <input id="inputName" type="text" class="form-control" value="{name}" required autofocus>
       </div>
       <div class="form-group">
-         <label for="email">Email</label>
-         <input name="email" type="email" class="form-control" value="{email}" required>
+         <label for="inputEmail">Email</label>
+         <input id="inputEmail" type="email" class="form-control" value="{email}" pattern="^[[:word:]]+$@^[[:word:]]+$.^[[:word:]]+$" required>
       </div>
       <div class="form-group">
-         <label for="phone">Телефон</label>
-         <input name="phone" type="text" class="form-control" value="{phone}" required>
+         <label for="inputPhone">Телефон</label>
+         <input id="inputPhone" type="text" class="form-control" value="{phone}" pattern="\d{11}" required>
       </div>
       <button type="submit" class="btn btn-success">Сохранить</button>
    </form>
+</div>
+<div class="modal" id="editModal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Изменение студента</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>Студент успешно сохранен!</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">ОК</button>
+      </div>
+    </div>
+  </div>
 </div>
